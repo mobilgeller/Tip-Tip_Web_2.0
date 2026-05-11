@@ -271,12 +271,17 @@ function initResponsiveHero() {
 const diagnosisData = {
   karcos: {
     title: "Polírozás és fényezéskorrekció",
-    text: "Matt, karcos vagy mosókarcos fényezésnél először állapotfelmérés kell, utána fényesítő, kétlépcsős vagy prémium polírozás javasolt. Tartós eredményhez kerámia védelem kapcsolható.",
+    text: "A polírozás segít javítani a felület optikai állapotát, csökkenteni a mikrokarcokat, és újra látványosabbá tenni az autó megjelenését.",
     href: "szolgaltatasok/polirozas/",
   },
   ujauto: {
-    title: "Új autó védelem kerámia bevonattal",
-    text: "Új autónál a cél az állapot megőrzése: kíméletes előkészítés, szükség szerinti finom korrekció, majd kerámia vagy graphene védelem.",
+    title: "Kerámia bevonat",
+    text: "Új autónál az a legnagyobb előny, hogy az állapot még most megőrizhető.",
+    href: "szolgaltatasok/keramia-bevonat/",
+  },
+  keramia: {
+    title: "Kerámia bevonat",
+    text: "Tartós védelem új, polírozott vagy jó állapotú autóra. A cél, hogy a fényezés tovább őrizze a fényét, könnyebben tisztítható maradjon, és ellenállóbb legyen a mindennapi használat során.",
     href: "szolgaltatasok/keramia-bevonat/",
   },
   kulso: {
@@ -286,33 +291,46 @@ const diagnosisData = {
   },
   belso: {
     title: "Kárpittisztítás és belső mélytisztítás",
-    text: "Foltos, szagos vagy erősen használt utastérnél a kárpit, műanyagok és nehezen elérhető részek együttes kezelésére van szükség.",
+    text: "Foltos, szagos, poros vagy erősen használt belső térnél az egyszerű belső takarítás sokszor már kevés. A kárpittisztítás és belső mélytisztítás nemcsak látványban javít, hanem a mindennapi komfortot is visszaadja.",
     href: "szolgaltatasok/karpittisztitas/",
   },
   klima: {
     title: "Klímatisztítás és szagtalanítás",
-    text: "Kellemetlen szag vagy szezonális fertőtlenítés esetén ózonos, vegyszeres vagy kombinált kezelés jöhet szóba, állapottól függően.",
+    text: "A kellemetlen szag forrása lehet a klímarendszer, a kárpit, a szőnyegek, a szellőzőjáratok vagy korábbi beázás is. Ezért a cél nem a szag elfedése, hanem az ok feltárása és kezelése.",
     href: "szolgaltatasok/klimatisztitas-szagtalanitas/",
   },
   tetokarpit: {
-    title: "Tetőkárpit tisztítás",
-    text: "A tetőkárpit ragasztott, kényes felület. Itt előzetes egyeztetés és kíméletes technológia szükséges, nem általános vizes tisztítás.",
+    title: "Tetőkárpit tisztítás, előzetes állapotfelméréssel",
+    text: "A tetőkárpit különösen érzékeny felület. Ezért ennél a problémánál az első lépés mindig az állapotfelmérés.",
     href: "szolgaltatasok/tetokarpit-tisztitas/",
+    actions: [
+      { label: "Kérj ajánlatot személyesen, vagy hívj: +36 30 235 0633", href: "tel:+36302350633", variant: "light" },
+      { label: "Részletek", href: "szolgaltatasok/tetokarpit-tisztitas/", variant: "outline" },
+    ],
   },
   lampa: {
-    title: "Lámpapolírozás és lámpafóliázás",
-    text: "Bemattult lámpánál a cél nem csak a látvány, hanem a fényerő és a tartós védelem visszaállítása.",
+    title: "Lámpapolírozás / lámpafóliázás",
+    text: "A lámpapolírozás javítja az átlátszóságot és az optikai állapotot. Tartósabb eredményhez a felület védelme vagy fóliázása is javasolt.",
     href: "szolgaltatasok/lampapolirozas-lampafoliazas/",
   },
+  motorter: {
+    title: "Motortér tisztítás",
+    text: "A motortér tisztítás speciális, előzetes egyeztetést igénylő kezelés. Az alkalmazható megoldás az autó állapotától, az érzékeny alkatrészektől és a szennyezettség mértékétől függ.",
+    href: "szolgaltatasok/motorter-tisztitas/",
+  },
   ceges: {
-    title: "Teherautó, kisbusz és munkagép takarítás",
-    text: "Céges vagy erősen használt járműveknél egyedi állapotfelmérés, fotóbeküldés és ütemezett takarítási ajánlat javasolt.",
+    title: "Belső mélytisztítás / céges autóápolási csomag",
+    text: "A céges, munkás vagy sokat használt autóknál a tisztaság mellett az első benyomás és a használhatóság is fontos. Itt gyakran nem egy gyors takarítás ad jó eredményt.",
     href: "szolgaltatasok/teherauto-munkagep-takaritas/",
   },
   serules: {
-    title: "Bőr- és szövetjavítás vagy sérülés felmérés",
-    text: "Szakadás, kopás, kavicsfelverődés vagy horpadás esetén fotó vagy személyes megtekintés alapján dönthető el a javítási irány.",
+    title: "Állapotfelmérés / sérülésjavítási ajánlat",
+    text: "A horpadás, kavicsfelverődés, bőr- vagy szövetkárosodás pontos javíthatósága mindig a sérülés helyétől, méretétől és jellegétől függ. Az első lépés a fotóbeküldés vagy személyes állapotfelmérés.",
     href: "szolgaltatasok/bor-szovet-javitas/",
+    actions: [
+      { label: "Horpadás javítás | Hívj: +36 30 235 0633", href: "tel:+36302350633", variant: "light" },
+      { label: "Bőr és szövet javítás, festés | Részletek", href: "szolgaltatasok/bor-szovet-javitas/", variant: "outline" },
+    ],
   },
 };
 
@@ -320,16 +338,26 @@ function bindDiagnosis() {
   const result = document.querySelector("[data-diagnosis-result]");
   if (!result) return;
 
+  const clearResult = () => {
+    result.classList.remove("is-visible");
+    result.innerHTML = "";
+  };
+
   const showResult = (type) => {
     const data = diagnosisData[type];
     if (!data) return;
+      const actions = data.actions || [
+        { label: "Időpontfoglalás", href: "foglalas/", variant: "light" },
+        { label: "Részletek", href: data.href, variant: "outline" },
+      ];
       result.innerHTML = `
-        <p class="section-kicker">Javaslatunk neked</p>
+        <p class="section-kicker">Javaslatunk Neked</p>
         <h2 class="section-title">${data.title}</h2>
         <p class="section-copy">${data.text}</p>
         <div class="actions">
-          <a class="btn btn-light" href="${toRoot("foglalas/")}">Időpontot kérek</a>
-          <a class="btn btn-outline" href="${toRoot(data.href)}">Részletek</a>
+          ${actions
+            .map((action) => `<a class="btn btn-${action.variant}" href="${action.href.startsWith("tel:") ? action.href : toRoot(action.href)}">${action.label}</a>`)
+            .join("")}
         </div>
       `;
       result.classList.add("is-visible");
@@ -338,6 +366,17 @@ function bindDiagnosis() {
 
   document.querySelectorAll("[data-diagnosis]").forEach((button) => {
     button.addEventListener("click", () => showResult(button.getAttribute("data-diagnosis")));
+  });
+
+  document.querySelectorAll(".diagnosis-accordion").forEach((accordion) => {
+    const summary = accordion.querySelector("summary");
+    summary?.addEventListener("click", () => {
+      if (accordion.open) clearResult();
+    });
+
+    accordion.addEventListener("toggle", () => {
+      if (!accordion.open) clearResult();
+    });
   });
 
   const initialProblem = new URLSearchParams(window.location.search).get("problem");

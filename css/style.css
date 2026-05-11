@@ -521,6 +521,14 @@ h4 {
   margin-bottom: 0;
 }
 
+.copy-note {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.86em;
+  font-style: italic;
+  line-height: 1.55;
+}
+
 .section-dark .section-copy,
 .section-blue .section-copy {
   color: var(--muted);
@@ -729,6 +737,62 @@ h4 {
   margin-bottom: 0;
 }
 
+.diagnosis-head {
+  max-width: min(1120px, 100%);
+}
+
+.diagnosis-head .section-title,
+.diagnosis-head .section-copy {
+  max-width: 100%;
+}
+
+.diagnosis-title {
+  letter-spacing: 0.026em;
+}
+
+.diagnosis-grid {
+  align-items: start;
+}
+
+.diagnosis-accordion summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.diagnosis-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.diagnosis-accordion summary h2 {
+  margin-bottom: 0;
+}
+
+.diagnosis-accordion summary i {
+  color: var(--gold);
+  transition: transform 0.22s ease;
+}
+
+.diagnosis-accordion:not([open]) summary {
+  margin-bottom: 0;
+}
+
+.diagnosis-accordion:not([open]) summary i {
+  transform: rotate(-90deg);
+}
+
+.diagnosis-note {
+  display: block;
+  max-width: 980px;
+  margin: 28px auto 0;
+  color: var(--muted);
+  text-align: center;
+}
+
 .crumb {
   display: inline-block;
   margin-bottom: 18px;
@@ -901,7 +965,9 @@ textarea.field {
 
 .diagnosis-result {
   display: none;
-  padding: 36px;
+  max-width: 1080px;
+  margin: 34px auto 0;
+  padding: 28px 32px;
   border-radius: var(--radius);
   color: var(--ink);
   background:
@@ -914,8 +980,28 @@ textarea.field {
   display: block;
 }
 
+.diagnosis-result .section-kicker {
+  margin-bottom: 14px;
+  font-size: 0.68rem;
+}
+
+.diagnosis-result .section-title {
+  max-width: 100%;
+  margin-bottom: 16px;
+  font-size: clamp(1.7rem, 3vw, 3.25rem);
+  line-height: 1;
+}
+
 .diagnosis-result p {
+  max-width: 920px;
+  margin-bottom: 26px;
+  font-size: 0.94rem;
+  line-height: 1.62;
   color: var(--muted);
+}
+
+.diagnosis-result .actions {
+  margin-top: 0;
 }
 
 .site-footer {

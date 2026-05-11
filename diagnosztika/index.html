@@ -14,36 +14,43 @@
   <main>
     <section class="page-hero">
       <div class="container">
-        <div class="section-head">
-          <span class="crumb crumb-sentence">Nem kell pontosan ismerned a szolgáltatások nevét. Elég, ha felismered a problémát.</span>
-          <h1 class="section-title">Válaszd ki, mi zavar leginkább az autód állapotában?</h1>
-          <p class="section-copy">A diagnosztika célja, hogy a kiválasztott probléma alapján nem találgatunk, hanem a legvalószínűbb szolgáltatási irányt mutatjuk meg. A pontos kezelés az autó állapotától függ, ezért bizonyos esetekben fotó vagy személyes állapotfelmérés alapján adható végleges javaslat.</p>
+        <div class="section-head diagnosis-head">
+          <span class="crumb crumb-sentence">Elég, ha felismered a problémát</span>
+          <h1 class="section-title diagnosis-title">Válaszd ki, mi zavar leginkább az autód állapotában?</h1>
+          <p class="section-copy">A diagnosztika célja, hogy a legvalószínűbb szolgáltatási irányt mutatjuk meg.</p>
         </div>
       </div>
     </section>
 
     <section class="section section-white">
       <div class="container">
-        <div class="grid grid-2">
-          <article class="card">
-            <h2>Külső állapot</h2>
+        <div class="grid grid-2 diagnosis-grid">
+          <details class="card diagnosis-accordion">
+            <summary>
+              <h2>Külső állapot</h2>
+              <i class="fa-solid fa-chevron-down"></i>
+            </summary>
             <div class="problem-list">
               <button class="problem-button" type="button" data-diagnosis="karcos">Karcos, matt vagy fakó fényezés <i class="fa-solid fa-chevron-right"></i></button>
               <button class="problem-button" type="button" data-diagnosis="ujauto">Új autót szeretnék megvédeni <i class="fa-solid fa-chevron-right"></i></button>
               <button class="problem-button" type="button" data-diagnosis="lampa">Bemattult fényszórók <i class="fa-solid fa-chevron-right"></i></button>
               <button class="problem-button" type="button" data-diagnosis="serules">Horpadás, kavicsfelverődés vagy kárpitsérülés <i class="fa-solid fa-chevron-right"></i></button>
             </div>
-          </article>
-          <article class="card">
-            <h2>Belső állapot</h2>
+          </details>
+          <details class="card diagnosis-accordion">
+            <summary>
+              <h2>Belső állapot</h2>
+              <i class="fa-solid fa-chevron-down"></i>
+            </summary>
             <div class="problem-list">
               <button class="problem-button" type="button" data-diagnosis="belso">Koszos, foltos vagy elhasznált belső tér <i class="fa-solid fa-chevron-right"></i></button>
               <button class="problem-button" type="button" data-diagnosis="klima">Kellemetlen szag vagy klíma probléma <i class="fa-solid fa-chevron-right"></i></button>
               <button class="problem-button" type="button" data-diagnosis="tetokarpit">Tetőkárpit probléma <i class="fa-solid fa-chevron-right"></i></button>
               <button class="problem-button" type="button" data-diagnosis="ceges">Céges, munkás vagy erősen használt autó <i class="fa-solid fa-chevron-right"></i></button>
             </div>
-          </article>
+          </details>
         </div>
+        <p class="diagnosis-note copy-note">A pontos kezelés az autó állapotától függ, ezért bizonyos esetekben fotó vagy személyes állapotfelmérés alapján adható végleges javaslat.</p>
         <div class="diagnosis-result" data-diagnosis-result></div>
       </div>
     </section>
