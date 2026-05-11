@@ -739,6 +739,12 @@ h4 {
   text-transform: uppercase;
 }
 
+.crumb-sentence {
+  max-width: 760px;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+}
+
 .split {
   display: grid;
   grid-template-columns: 1.08fr 0.92fr;
