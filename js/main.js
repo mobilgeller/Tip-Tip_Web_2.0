@@ -535,6 +535,61 @@ const priceCatalog = [
   { category: "dent", title: "Kavicsfelverődés / külső sérülés kezelése", size: "Egyedi", price: null, note: "Egyedi állapotfelmérés alapján" },
 ];
 
+const priceDescriptions = {
+  "Külső mosás": "külső mosás, öblítés, szárazra törlés",
+  "Belső takarítás": "porszívózás, műanyagápolás, üvegtisztítás",
+  "Külső + belső takarítás": "külső mosás, porszívózás, műanyagápolás, üvegtisztítás",
+  "Prémium külső-belső takarítás Nano Finish bevonattal": "külső-belső takarítás, Nano Finish bevonat",
+  "Prémium külső mosás Nano Finish bevonattal": "külső mosás, Nano Finish vízlepergető bevonat",
+  "AUDI prémium külső-belső takarítás": "külső-belső prémium takarítás márkaspecifikus csomagban",
+  "BMW prémium külső-belső takarítás": "külső-belső prémium takarítás márkaspecifikus csomagban",
+  "MERCEDES prémium külső-belső takarítás": "külső-belső prémium takarítás márkaspecifikus csomagban",
+  "VOLKSWAGEN prémium külső-belső takarítás": "külső-belső prémium takarítás márkaspecifikus csomagban",
+  "Prémium waxolás": "fényezésápolás, wax védelem",
+  "Kerámia szélvédő bevonat": "szélvédő bevonat, vízlepergető hatás",
+  "Kerámia szélvédő vízlepergető bevonat": "szélvédő bevonat, vízlepergető hatás",
+  "Autó motormosás": "motortér tisztítás",
+  "Erős szennyeződés felár": "erős szennyezettség többletkezelése",
+  "Normál kárpittisztítás": "kárpittisztítás, belső textilfelületek tisztítása",
+  "Prémium kárpittisztítás szövetvédelemmel": "kárpittisztítás, szövetvédelem",
+  "Üléstisztítás / darab": "egy ülés tisztítása",
+  "Kisbusz kárpittisztítás, 9 személy": "kisbusz ülések és belső kárpit tisztítása",
+  "Klíma Kombó, vegyszeres + ózonos beltér": "vegyszeres klímatisztítás, ózonos beltérkezelés",
+  "Klímatisztítás Kombó, ózon + beltér fertőtlenítés": "ózonos kezelés, beltérfertőtlenítés",
+  "Vegyszer + ózon, ajándék ózonos utastér-fertőtlenítéssel": "vegyszeres kezelés, ózonos kezelés, utastér-fertőtlenítés",
+  "Ózonos klímatisztítás": "ózonos klímakezelés",
+  "Ózonos szagtalanítás / óra": "ózonos szagtalanítás",
+  "Vegyszeres klímatisztítás / klíma kombó": "vegyszeres klímatisztítás",
+  "Vegyszeres klímatisztítás": "vegyszeres klímatisztítás",
+  "Klíma kombó: vegyszeres + ózonos kezelés": "vegyszeres klímatisztítás, ózonos beltérkezelés",
+  "Vegyszer + ózon + ajándék utastér-fertőtlenítés": "vegyszeres kezelés, ózonos kezelés, utastér-fertőtlenítés",
+  "Hozott pollenszűrő cseréje": "pollenszűrő csere hozott szűrővel",
+  "Pollenszűrő csere hozott szűrővel": "pollenszűrő csere hozott szűrővel",
+  "Fényesítő polírozás": "egylépcsős polírozás, wax védelem",
+  "Kétlépcsős polírozás": "kétlépcsős polírozás, prémium wax védelem",
+  "PolishAngel 3-5 lépcsős prémium polírozás": "3-5 lépcsős polírozás, hibrid wax védelem",
+  "Bronz kerámia csomag": "karosszéria kerámia bevonat, üvegfelület védelem",
+  "Gold kerámia csomag": "öngyógyuló kerámia, karosszéria, üveg, felni, bőrápolás",
+  "Graphene+ csomag": "Graphene+ bevonat, tartós felületvédelem",
+  "Kerámia utókövető csomag": "kerámia bevonat éves utókezelése",
+  "Lámpapolírozás kerámiával, 2 darab": "lámpacsiszolás, polírozás, kerámia védelem",
+  "Lámpafóliázás, 2 darab": "lámpacsiszolás, polírozás, védőfólia",
+  "DSL hidrogénes motortisztítás": "hidrogénes motortisztítás",
+  "Teherautó belső takarítás": "belső takarítás nagyobb járműre",
+  "Teherautó / munkagép kárpittisztítás": "kárpittisztítás nagyobb járműre",
+  "Teherautó / munkagép polírozás": "külső polírozás nagyobb járműre",
+  "Kamion / munkagép kombi csomag": "belső takarítás, kárpittisztítás, polírozás",
+  "Kárpittisztítás + polírozás kombó csomag": "kárpittisztítás, polírozás",
+  "Traktor kárpittisztítás + polírozás kombó csomag": "traktor kárpittisztítás, polírozás",
+  "Szőnyegtisztítás / m²": "szőnyegtisztítás",
+  "Szőnyegimpregnálás / m²": "szőnyegimpregnálás",
+  "Bőr- és szövetjavítás": "bőrjavítás, szövetjavítás",
+  "Bőr- és szövetfestés": "bőr- és szövetfelületek festése",
+  "Belső felületi sérülések javítása": "belső felületi hibák javítása",
+  "Horpadásjavítás": "horpadás javítása állapotfelmérés alapján",
+  "Kavicsfelverődés / külső sérülés kezelése": "kavicsfelverődés, külső sérülés kezelése",
+};
+
 function formatPrice(price) {
   if (price === null) return "Egyedi";
   return `${price.toLocaleString("hu-HU")} Ft`;
@@ -573,6 +628,8 @@ function bindPriceCalculator() {
     if (["climate", "lights", "engine"].includes(item.category)) return "Fix díjas szolgáltatás";
     return priceSizeMeta[normalizePriceSize(item.size)]?.label || item.size;
   };
+
+  const getDescription = (item) => priceDescriptions[item.title] || "";
 
   const updateSizeIcon = () => {
     if (!sizeIcon) return;
@@ -621,6 +678,7 @@ function bindPriceCalculator() {
               <article class="price-option ${isSelected ? "is-selected" : ""}">
                 <div>
                   <h3>${item.title}</h3>
+                  ${getDescription(item) ? `<p class="price-option-description">${getDescription(item)}</p>` : ""}
                   <p>${getSizeLabel(item)}${item.note ? ` · ${item.note}` : ""}</p>
                 </div>
                 <strong>${getPriceText(item)}</strong>

@@ -1207,6 +1207,14 @@ h4 {
   font-weight: 700;
 }
 
+.price-option .price-option-description {
+  margin: 3px 0 6px;
+  color: rgba(217, 226, 232, 0.86);
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
 .price-option strong {
   color: var(--gold);
   white-space: nowrap;
