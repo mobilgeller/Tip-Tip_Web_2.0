@@ -458,27 +458,26 @@ const priceCatalog = [
   { category: "cleaning", title: "Külső mosás", size: "Kisbusz / TGK / Pick Up", price: 12000 },
   { category: "cleaning", title: "Belső takarítás", size: "Kisbusz / TGK / Pick Up", price: 12000 },
   { category: "cleaning", title: "Prémium külső-belső takarítás Nano Finish bevonattal", size: "Kisbusz / TGK / Pick Up", price: 27000 },
-  { category: "cleaning", title: "Normál kárpittisztítás", size: "Városi cirkáló", price: 49990 },
-  { category: "cleaning", title: "Normál kárpittisztítás", size: "Személyautó / SUV", price: 54990 },
-  { category: "cleaning", title: "Normál kárpittisztítás", size: "Terepjáró", price: 59990 },
-  { category: "cleaning", title: "Normál kárpittisztítás", size: "Kisbusz / TGK", price: 69990 },
-  { category: "cleaning", title: "Prémium kárpittisztítás szövetvédelemmel", size: "Városi cirkáló", price: 59990 },
-  { category: "cleaning", title: "Prémium kárpittisztítás szövetvédelemmel", size: "Személyautó / SUV", price: 59990 },
-  { category: "cleaning", title: "Prémium kárpittisztítás szövetvédelemmel", size: "Terepjáró", price: 69990 },
-  { category: "cleaning", title: "Prémium kárpittisztítás szövetvédelemmel", size: "Kisbusz / TGK", price: 79990 },
+  { category: "cleaning", title: "Normál kárpittisztítás", size: "Városi cirkáló", price: 45000 },
+  { category: "cleaning", title: "Normál kárpittisztítás", size: "Személyautó / SUV", price: 50000 },
+  { category: "cleaning", title: "Normál kárpittisztítás", size: "Terepjáró", price: 55000 },
+  { category: "cleaning", title: "Normál kárpittisztítás", size: "Kisbusz / TGK", price: 65000 },
+  { category: "cleaning", title: "Prémium kárpittisztítás szövetvédelemmel", size: "Városi cirkáló", price: 55000 },
+  { category: "cleaning", title: "Prémium kárpittisztítás szövetvédelemmel", size: "Személyautó / SUV", price: 60000 },
+  { category: "cleaning", title: "Prémium kárpittisztítás szövetvédelemmel", size: "Terepjáró", price: 65000 },
+  { category: "cleaning", title: "Prémium kárpittisztítás szövetvédelemmel", size: "Kisbusz / TGK", price: 75000 },
   { category: "cleaning", title: "Üléstisztítás / darab", size: "Kiegészítő", price: 7500 },
   { category: "cleaning", title: "Erős szennyeződés felár", size: "Kiegészítő", price: 5000 },
   { category: "cleaning", title: "Kisbusz kárpittisztítás, 9 személy", size: "Kisbusz / TGK", price: 65000 },
   { category: "cleaning", title: "Szőnyegtisztítás / m²", size: "Szőnyeg", price: 2000 },
   { category: "cleaning", title: "Szőnyegimpregnálás / m²", size: "Szőnyeg", price: 1600 },
 
-  { category: "climate", title: "Klíma Kombó, vegyszeres + ózonos beltér", size: "Klíma", price: 17900 },
-  { category: "climate", title: "Klímatisztítás Kombó, ózon + beltér fertőtlenítés", size: "Klíma", price: 17900 },
-  { category: "climate", title: "Vegyszer + ózon, ajándék ózonos utastér-fertőtlenítéssel", size: "Klíma", price: 19900 },
   { category: "climate", title: "Ózonos klímatisztítás", size: "Klíma", price: 12000 },
+  { category: "climate", title: "Vegyszeres klímatisztítás", size: "Klíma", price: 17900 },
+  { category: "climate", title: "Klíma kombó: vegyszeres + ózonos kezelés", size: "Klíma", price: 17900 },
+  { category: "climate", title: "Vegyszer + ózon + ajándék utastér-fertőtlenítés", size: "Klíma", price: 19900 },
   { category: "climate", title: "Ózonos szagtalanítás / óra", size: "Klíma", price: 12000 },
-  { category: "climate", title: "Vegyszeres klímatisztítás / klíma kombó", size: "Klíma", price: 17900 },
-  { category: "climate", title: "Hozott pollenszűrő cseréje", size: "Klíma", price: 0, note: "Díjmentesen kérhető" },
+  { category: "climate", title: "Pollenszűrő csere hozott szűrővel", size: "Klíma", price: null, priceText: "Díjmentes", note: "Hozott pollenszűrő esetén" },
 
   { category: "paint", title: "Fényesítő polírozás", size: "Városi cirkáló", price: 45000 },
   { category: "paint", title: "Fényesítő polírozás", size: "Személyautó / SUV", price: 60000 },
@@ -507,7 +506,10 @@ const priceCatalog = [
   { category: "paint", title: "Graphene+ csomag", size: "Személyautó / SUV", price: 320000 },
   { category: "paint", title: "Graphene+ csomag", size: "Terepjáró", price: 350000 },
   { category: "paint", title: "Graphene+ csomag", size: "Kisbusz / TGK", price: 380000 },
-  { category: "paint", title: "Kerámia utókövető csomag", size: "Kiegészítő", price: 45000 },
+  { category: "paint", title: "Kerámia utókövető csomag", size: "Városi cirkáló", price: 40000 },
+  { category: "paint", title: "Kerámia utókövető csomag", size: "Személyautó / SUV", price: 40000 },
+  { category: "paint", title: "Kerámia utókövető csomag", size: "Terepjáró", price: 40000 },
+  { category: "paint", title: "Kerámia utókövető csomag", size: "Kisbusz / TGK", price: 45000 },
 
   { category: "special", title: "Lámpapolírozás kerámiával, 2 darab", size: "Lámpa", price: 25000 },
   { category: "special", title: "Lámpafóliázás, 2 darab", size: "Lámpa", price: 40000 },
@@ -531,6 +533,10 @@ const priceCatalog = [
 function formatPrice(price) {
   if (price === null) return "Egyedi";
   return `${price.toLocaleString("hu-HU")} Ft`;
+}
+
+function getPriceText(item) {
+  return item.priceText || formatPrice(item.price);
 }
 
 function bindPriceCalculator() {
@@ -577,7 +583,7 @@ function bindPriceCalculator() {
               <small>${getSizeLabel(item)}${item.note ? ` · ${item.note}` : ""}</small>
             </span>
             <button type="button" data-remove-selected="${index}" aria-label="Kiválasztás törlése"><i class="fa-solid fa-xmark"></i></button>
-            <b>${formatPrice(item.price)}</b>
+            <b>${getPriceText(item)}</b>
           </div>
         `)
         .join("");
@@ -593,7 +599,8 @@ function bindPriceCalculator() {
     const filtered = priceCatalog.filter((item) => {
       const categoryMatch = item.category === activeCategory;
       const sizeKey = normalizePriceSize(item.size);
-      const sizeMatch = size === "all" || sizeKey === size || sizeKey === "other";
+      const isFixedOrCustom = sizeKey === "other";
+      const sizeMatch = size === "all" || sizeKey === size || isFixedOrCustom;
       return categoryMatch && sizeMatch;
     });
 
@@ -607,7 +614,7 @@ function bindPriceCalculator() {
                   <h3>${item.title}</h3>
                   <p>${getSizeLabel(item)}${item.note ? ` · ${item.note}` : ""}</p>
                 </div>
-                <strong>${formatPrice(item.price)}</strong>
+                <strong>${getPriceText(item)}</strong>
                 <button type="button" data-price-add="${getItemId(item)}">${isSelected ? "Kiválasztva" : "Kiválasztom"}</button>
               </article>
             `;
