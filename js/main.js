@@ -412,12 +412,17 @@ function bindServiceGroups() {
 }
 
 const priceCategories = [
-  ["cleaning", "Tisztítás és beltérápolás"],
+  ["wash", "Autómosás és beltérápolás"],
+  ["upholstery", "Kárpittisztítás"],
   ["climate", "Klíma és szagtalanítás"],
-  ["paint", "Fényezés, polírozás és védelem"],
-  ["special", "Optikai és speciális kezelések"],
+  ["polish", "Polírozás"],
+  ["ceramic", "Kerámia bevonat"],
+  ["lights", "Lámpapolírozás és lámpafóliázás"],
+  ["engine", "Motortér tisztítás"],
+  ["repair", "Bőr és szövetjavítás"],
+  ["dent", "Horpadásjavítás"],
   ["fleet", "Nagyobb járművek és céges igények"],
-  ["custom", "Egyedi állapotfelméréses szolgáltatások"],
+  ["carpet", "Szőnyegtisztítás"],
 ];
 
 const priceSizeMeta = {
@@ -439,38 +444,38 @@ function normalizePriceSize(size) {
 }
 
 const priceCatalog = [
-  { category: "cleaning", title: "AUDI prémium külső-belső takarítás", size: "Személygépkocsi", price: 25000 },
-  { category: "cleaning", title: "BMW prémium külső-belső takarítás", size: "Személygépkocsi", price: 25000 },
-  { category: "cleaning", title: "MERCEDES prémium külső-belső takarítás", size: "Személygépkocsi", price: 25000 },
-  { category: "cleaning", title: "VOLKSWAGEN prémium külső-belső takarítás", size: "Személygépkocsi", price: 25000 },
-  { category: "cleaning", title: "Külső mosás", size: "Városi cirkáló", price: 7500 },
-  { category: "cleaning", title: "Belső takarítás", size: "Városi cirkáló", price: 8000 },
-  { category: "cleaning", title: "Külső + belső takarítás", size: "Városi cirkáló", price: 15500 },
-  { category: "cleaning", title: "Prémium külső-belső takarítás Nano Finish bevonattal", size: "Városi cirkáló", price: 16500 },
-  { category: "cleaning", title: "Külső mosás", size: "Személyautó / SUV / egyterű", price: 8500 },
-  { category: "cleaning", title: "Belső takarítás", size: "Személyautó / SUV / egyterű", price: 9000 },
-  { category: "cleaning", title: "Külső + belső takarítás", size: "Személyautó / SUV / egyterű", price: 17500 },
-  { category: "cleaning", title: "Prémium külső-belső takarítás Nano Finish bevonattal", size: "Személyautó / SUV / egyterű", price: 18500 },
-  { category: "cleaning", title: "Prémium külső mosás Nano Finish bevonattal", size: "Városi terepjáró", price: 10000 },
-  { category: "cleaning", title: "Belső takarítás", size: "Városi terepjáró", price: 10000 },
-  { category: "cleaning", title: "Külső + belső takarítás", size: "Városi terepjáró", price: 20000 },
-  { category: "cleaning", title: "Prémium külső-belső takarítás Nano Finish bevonattal", size: "Városi terepjáró", price: 21000 },
-  { category: "cleaning", title: "Külső mosás", size: "Kisbusz / TGK / Pick Up", price: 12000 },
-  { category: "cleaning", title: "Belső takarítás", size: "Kisbusz / TGK / Pick Up", price: 12000 },
-  { category: "cleaning", title: "Prémium külső-belső takarítás Nano Finish bevonattal", size: "Kisbusz / TGK / Pick Up", price: 27000 },
-  { category: "cleaning", title: "Normál kárpittisztítás", size: "Városi cirkáló", price: 45000 },
-  { category: "cleaning", title: "Normál kárpittisztítás", size: "Személyautó / SUV", price: 50000 },
-  { category: "cleaning", title: "Normál kárpittisztítás", size: "Terepjáró", price: 55000 },
-  { category: "cleaning", title: "Normál kárpittisztítás", size: "Kisbusz / TGK", price: 65000 },
-  { category: "cleaning", title: "Prémium kárpittisztítás szövetvédelemmel", size: "Városi cirkáló", price: 55000 },
-  { category: "cleaning", title: "Prémium kárpittisztítás szövetvédelemmel", size: "Személyautó / SUV", price: 60000 },
-  { category: "cleaning", title: "Prémium kárpittisztítás szövetvédelemmel", size: "Terepjáró", price: 65000 },
-  { category: "cleaning", title: "Prémium kárpittisztítás szövetvédelemmel", size: "Kisbusz / TGK", price: 75000 },
-  { category: "cleaning", title: "Üléstisztítás / darab", size: "Kiegészítő", price: 7500 },
-  { category: "cleaning", title: "Erős szennyeződés felár", size: "Kiegészítő", price: 5000 },
-  { category: "cleaning", title: "Kisbusz kárpittisztítás, 9 személy", size: "Kisbusz / TGK", price: 65000 },
-  { category: "cleaning", title: "Szőnyegtisztítás / m²", size: "Szőnyeg", price: 2000 },
-  { category: "cleaning", title: "Szőnyegimpregnálás / m²", size: "Szőnyeg", price: 1600 },
+  { category: "wash", title: "AUDI prémium külső-belső takarítás", size: "Személygépkocsi", price: 25000 },
+  { category: "wash", title: "BMW prémium külső-belső takarítás", size: "Személygépkocsi", price: 25000 },
+  { category: "wash", title: "MERCEDES prémium külső-belső takarítás", size: "Személygépkocsi", price: 25000 },
+  { category: "wash", title: "VOLKSWAGEN prémium külső-belső takarítás", size: "Személygépkocsi", price: 25000 },
+  { category: "wash", title: "Külső mosás", size: "Városi cirkáló", price: 7500 },
+  { category: "wash", title: "Belső takarítás", size: "Városi cirkáló", price: 8000 },
+  { category: "wash", title: "Külső + belső takarítás", size: "Városi cirkáló", price: 15500 },
+  { category: "wash", title: "Prémium külső-belső takarítás Nano Finish bevonattal", size: "Városi cirkáló", price: 16500 },
+  { category: "wash", title: "Külső mosás", size: "Személyautó / SUV / egyterű", price: 8500 },
+  { category: "wash", title: "Belső takarítás", size: "Személyautó / SUV / egyterű", price: 9000 },
+  { category: "wash", title: "Külső + belső takarítás", size: "Személyautó / SUV / egyterű", price: 17500 },
+  { category: "wash", title: "Prémium külső-belső takarítás Nano Finish bevonattal", size: "Személyautó / SUV / egyterű", price: 18500 },
+  { category: "wash", title: "Prémium külső mosás Nano Finish bevonattal", size: "Városi terepjáró", price: 10000 },
+  { category: "wash", title: "Belső takarítás", size: "Városi terepjáró", price: 10000 },
+  { category: "wash", title: "Külső + belső takarítás", size: "Városi terepjáró", price: 20000 },
+  { category: "wash", title: "Prémium külső-belső takarítás Nano Finish bevonattal", size: "Városi terepjáró", price: 21000 },
+  { category: "wash", title: "Külső mosás", size: "Kisbusz / TGK / Pick Up", price: 12000 },
+  { category: "wash", title: "Belső takarítás", size: "Kisbusz / TGK / Pick Up", price: 12000 },
+  { category: "wash", title: "Prémium külső-belső takarítás Nano Finish bevonattal", size: "Kisbusz / TGK / Pick Up", price: 27000 },
+  { category: "upholstery", title: "Normál kárpittisztítás", size: "Városi cirkáló", price: 45000 },
+  { category: "upholstery", title: "Normál kárpittisztítás", size: "Személyautó / SUV", price: 50000 },
+  { category: "upholstery", title: "Normál kárpittisztítás", size: "Terepjáró", price: 55000 },
+  { category: "upholstery", title: "Normál kárpittisztítás", size: "Kisbusz / TGK", price: 65000 },
+  { category: "upholstery", title: "Prémium kárpittisztítás szövetvédelemmel", size: "Városi cirkáló", price: 55000 },
+  { category: "upholstery", title: "Prémium kárpittisztítás szövetvédelemmel", size: "Személyautó / SUV", price: 60000 },
+  { category: "upholstery", title: "Prémium kárpittisztítás szövetvédelemmel", size: "Terepjáró", price: 65000 },
+  { category: "upholstery", title: "Prémium kárpittisztítás szövetvédelemmel", size: "Kisbusz / TGK", price: 75000 },
+  { category: "upholstery", title: "Üléstisztítás / darab", size: "Kiegészítő", price: 7500 },
+  { category: "upholstery", title: "Erős szennyeződés felár", size: "Kiegészítő", price: 5000 },
+  { category: "upholstery", title: "Kisbusz kárpittisztítás, 9 személy", size: "Kisbusz / TGK", price: 65000 },
+  { category: "carpet", title: "Szőnyegtisztítás / m²", size: "Szőnyeg", price: 2000 },
+  { category: "carpet", title: "Szőnyegimpregnálás / m²", size: "Szőnyeg", price: 1600 },
 
   { category: "climate", title: "Ózonos klímatisztítás", size: "Klíma", price: 12000 },
   { category: "climate", title: "Vegyszeres klímatisztítás", size: "Klíma", price: 17900 },
@@ -479,42 +484,42 @@ const priceCatalog = [
   { category: "climate", title: "Ózonos szagtalanítás / óra", size: "Klíma", price: 12000 },
   { category: "climate", title: "Pollenszűrő csere hozott szűrővel", size: "Klíma", price: null, priceText: "Díjmentes", note: "Hozott pollenszűrő esetén" },
 
-  { category: "paint", title: "Fényesítő polírozás", size: "Városi cirkáló", price: 45000 },
-  { category: "paint", title: "Fényesítő polírozás", size: "Személyautó / SUV", price: 60000 },
-  { category: "paint", title: "Fényesítő polírozás", size: "Terepjáró", price: 80000 },
-  { category: "paint", title: "Fényesítő polírozás", size: "Kisbusz / TGK", price: 100000 },
-  { category: "paint", title: "Kétlépcsős polírozás", size: "Városi cirkáló", price: 80000 },
-  { category: "paint", title: "Kétlépcsős polírozás", size: "Személyautó / SUV", price: 100000 },
-  { category: "paint", title: "Kétlépcsős polírozás", size: "Terepjáró", price: 120000 },
-  { category: "paint", title: "Kétlépcsős polírozás", size: "Kisbusz / TGK", price: 140000 },
-  { category: "paint", title: "PolishAngel 3-5 lépcsős prémium polírozás", size: "Városi cirkáló", price: 100000 },
-  { category: "paint", title: "PolishAngel 3-5 lépcsős prémium polírozás", size: "Személyautó / SUV", price: 120000 },
-  { category: "paint", title: "PolishAngel 3-5 lépcsős prémium polírozás", size: "Terepjáró", price: 150000 },
-  { category: "paint", title: "PolishAngel 3-5 lépcsős prémium polírozás", size: "Kisbusz / TGK", price: 180000 },
-  { category: "paint", title: "Prémium waxolás", size: "Kiegészítő", price: 25000 },
-  { category: "paint", title: "Kerámia szélvédő bevonat", size: "Kiegészítő", price: 10000 },
-  { category: "paint", title: "Kerámia szélvédő vízlepergető bevonat", size: "Kiegészítő", price: 12000 },
-  { category: "paint", title: "Bronz kerámia csomag", size: "Városi cirkáló", price: 99000 },
-  { category: "paint", title: "Bronz kerámia csomag", size: "Személyautó / SUV", price: 130000 },
-  { category: "paint", title: "Bronz kerámia csomag", size: "Terepjáró", price: 150000 },
-  { category: "paint", title: "Bronz kerámia csomag", size: "Kisbusz / TGK", price: 180000 },
-  { category: "paint", title: "Gold kerámia csomag", size: "Városi cirkáló", price: 230000 },
-  { category: "paint", title: "Gold kerámia csomag", size: "Személyautó / SUV", price: 260000 },
-  { category: "paint", title: "Gold kerámia csomag", size: "Terepjáró", price: 290000 },
-  { category: "paint", title: "Gold kerámia csomag", size: "Kisbusz / TGK", price: 300000 },
-  { category: "paint", title: "Graphene+ csomag", size: "Városi cirkáló", price: 280000 },
-  { category: "paint", title: "Graphene+ csomag", size: "Személyautó / SUV", price: 320000 },
-  { category: "paint", title: "Graphene+ csomag", size: "Terepjáró", price: 350000 },
-  { category: "paint", title: "Graphene+ csomag", size: "Kisbusz / TGK", price: 380000 },
-  { category: "paint", title: "Kerámia utókövető csomag", size: "Városi cirkáló", price: 40000 },
-  { category: "paint", title: "Kerámia utókövető csomag", size: "Személyautó / SUV", price: 40000 },
-  { category: "paint", title: "Kerámia utókövető csomag", size: "Terepjáró", price: 40000 },
-  { category: "paint", title: "Kerámia utókövető csomag", size: "Kisbusz / TGK", price: 45000 },
+  { category: "polish", title: "Fényesítő polírozás", size: "Városi cirkáló", price: 45000 },
+  { category: "polish", title: "Fényesítő polírozás", size: "Személyautó / SUV", price: 60000 },
+  { category: "polish", title: "Fényesítő polírozás", size: "Terepjáró", price: 80000 },
+  { category: "polish", title: "Fényesítő polírozás", size: "Kisbusz / TGK", price: 100000 },
+  { category: "polish", title: "Kétlépcsős polírozás", size: "Városi cirkáló", price: 80000 },
+  { category: "polish", title: "Kétlépcsős polírozás", size: "Személyautó / SUV", price: 100000 },
+  { category: "polish", title: "Kétlépcsős polírozás", size: "Terepjáró", price: 120000 },
+  { category: "polish", title: "Kétlépcsős polírozás", size: "Kisbusz / TGK", price: 140000 },
+  { category: "polish", title: "PolishAngel 3-5 lépcsős prémium polírozás", size: "Városi cirkáló", price: 100000 },
+  { category: "polish", title: "PolishAngel 3-5 lépcsős prémium polírozás", size: "Személyautó / SUV", price: 120000 },
+  { category: "polish", title: "PolishAngel 3-5 lépcsős prémium polírozás", size: "Terepjáró", price: 150000 },
+  { category: "polish", title: "PolishAngel 3-5 lépcsős prémium polírozás", size: "Kisbusz / TGK", price: 180000 },
+  { category: "polish", title: "Prémium waxolás", size: "Kiegészítő", price: 25000 },
+  { category: "ceramic", title: "Kerámia szélvédő bevonat", size: "Kiegészítő", price: 10000 },
+  { category: "ceramic", title: "Kerámia szélvédő vízlepergető bevonat", size: "Kiegészítő", price: 12000 },
+  { category: "ceramic", title: "Bronz kerámia csomag", size: "Városi cirkáló", price: 99000 },
+  { category: "ceramic", title: "Bronz kerámia csomag", size: "Személyautó / SUV", price: 130000 },
+  { category: "ceramic", title: "Bronz kerámia csomag", size: "Terepjáró", price: 150000 },
+  { category: "ceramic", title: "Bronz kerámia csomag", size: "Kisbusz / TGK", price: 180000 },
+  { category: "ceramic", title: "Gold kerámia csomag", size: "Városi cirkáló", price: 230000 },
+  { category: "ceramic", title: "Gold kerámia csomag", size: "Személyautó / SUV", price: 260000 },
+  { category: "ceramic", title: "Gold kerámia csomag", size: "Terepjáró", price: 290000 },
+  { category: "ceramic", title: "Gold kerámia csomag", size: "Kisbusz / TGK", price: 300000 },
+  { category: "ceramic", title: "Graphene+ csomag", size: "Városi cirkáló", price: 280000 },
+  { category: "ceramic", title: "Graphene+ csomag", size: "Személyautó / SUV", price: 320000 },
+  { category: "ceramic", title: "Graphene+ csomag", size: "Terepjáró", price: 350000 },
+  { category: "ceramic", title: "Graphene+ csomag", size: "Kisbusz / TGK", price: 380000 },
+  { category: "ceramic", title: "Kerámia utókövető csomag", size: "Városi cirkáló", price: 45000 },
+  { category: "ceramic", title: "Kerámia utókövető csomag", size: "Személyautó / SUV", price: 45000 },
+  { category: "ceramic", title: "Kerámia utókövető csomag", size: "Terepjáró", price: 45000 },
+  { category: "ceramic", title: "Kerámia utókövető csomag", size: "Kisbusz / TGK", price: 45000 },
 
-  { category: "special", title: "Lámpapolírozás kerámiával, 2 darab", size: "Lámpa", price: 25000 },
-  { category: "special", title: "Lámpafóliázás, 2 darab", size: "Lámpa", price: 40000 },
-  { category: "special", title: "Autó motormosás", size: "Motortér", price: 10000 },
-  { category: "special", title: "DSL hidrogénes motortisztítás", size: "Motortér", price: 20000 },
+  { category: "lights", title: "Lámpapolírozás kerámiával, 2 darab", size: "Lámpa", price: 25000 },
+  { category: "lights", title: "Lámpafóliázás, 2 darab", size: "Lámpa", price: 40000 },
+  { category: "engine", title: "Autó motormosás", size: "Motortér", price: 10000 },
+  { category: "engine", title: "DSL hidrogénes motortisztítás", size: "Motortér", price: 20000 },
 
   { category: "fleet", title: "Teherautó belső takarítás", size: "Teherautó / munkagép", price: 35000 },
   { category: "fleet", title: "Teherautó / munkagép kárpittisztítás", size: "Teherautó / munkagép", price: 70000 },
@@ -523,11 +528,11 @@ const priceCatalog = [
   { category: "fleet", title: "Kárpittisztítás + polírozás kombó csomag", size: "Teherautó / munkagép", price: 100000 },
   { category: "fleet", title: "Traktor kárpittisztítás + polírozás kombó csomag", size: "Teherautó / munkagép", price: 80000 },
 
-  { category: "custom", title: "Bőr- és szövetjavítás", size: "Egyedi", price: null, note: "Egyedi egyeztetés alapján" },
-  { category: "custom", title: "Bőr- és szövetfestés", size: "Egyedi", price: null, note: "Egyedi egyeztetés alapján" },
-  { category: "custom", title: "Belső felületi sérülések javítása", size: "Egyedi", price: null, note: "Fotóbeküldés vagy személyes megtekintés javasolt" },
-  { category: "custom", title: "Horpadásjavítás", size: "Egyedi", price: null, note: "Egyedi állapotfelmérés alapján" },
-  { category: "custom", title: "Kavicsfelverődés / külső sérülés kezelése", size: "Egyedi", price: null, note: "Egyedi állapotfelmérés alapján" },
+  { category: "repair", title: "Bőr- és szövetjavítás", size: "Egyedi", price: null, note: "Egyedi egyeztetés alapján" },
+  { category: "repair", title: "Bőr- és szövetfestés", size: "Egyedi", price: null, note: "Egyedi egyeztetés alapján" },
+  { category: "repair", title: "Belső felületi sérülések javítása", size: "Egyedi", price: null, note: "Fotóbeküldés vagy személyes megtekintés javasolt" },
+  { category: "dent", title: "Horpadásjavítás", size: "Egyedi", price: null, note: "Egyedi állapotfelmérés alapján" },
+  { category: "dent", title: "Kavicsfelverődés / külső sérülés kezelése", size: "Egyedi", price: null, note: "Egyedi állapotfelmérés alapján" },
 ];
 
 function formatPrice(price) {
@@ -543,7 +548,7 @@ function bindPriceCalculator() {
   const root = document.querySelector("[data-price-calculator]");
   if (!root) return;
 
-  const categoryRoot = root.querySelector("[data-price-categories]");
+  const categorySelect = root.querySelector("[data-price-category-select]");
   const listRoot = root.querySelector("[data-price-list]");
   const sizeSelect = root.querySelector("[data-price-size]");
   const sizeIcon = root.querySelector("[data-price-size-icon] i");
@@ -562,6 +567,9 @@ function bindPriceCalculator() {
   };
 
   const getSizeLabel = (item) => {
+    if (item.category === "carpet") return "m² alapú szolgáltatás";
+    if (item.category === "repair" || item.category === "dent") return "Állapotfelmérés alapján";
+    if (["climate", "lights", "engine"].includes(item.category)) return "Fix díjas szolgáltatás";
     return priceSizeMeta[normalizePriceSize(item.size)]?.label || item.size;
   };
 
@@ -624,16 +632,14 @@ function bindPriceCalculator() {
   };
 
   const renderCategories = () => {
-    categoryRoot.innerHTML = priceCategories
-      .map(([id, label]) => `<button type="button" class="${id === activeCategory ? "is-active" : ""}" data-price-category="${id}">${label}</button>`)
+    categorySelect.innerHTML = priceCategories
+      .map(([id, label]) => `<option value="${id}">${label}</option>`)
       .join("");
+    categorySelect.value = activeCategory;
   };
 
-  categoryRoot.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-price-category]");
-    if (!button) return;
-    activeCategory = button.getAttribute("data-price-category");
-    renderCategories();
+  categorySelect.addEventListener("change", () => {
+    activeCategory = categorySelect.value;
     renderItems();
   });
 
@@ -683,3 +689,4 @@ document.addEventListener("DOMContentLoaded", () => {
   bindServiceGroups();
   bindPriceCalculator();
 });
+
