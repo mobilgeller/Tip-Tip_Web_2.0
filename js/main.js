@@ -390,11 +390,22 @@ function bindServiceGroups() {
   if (!groups.length) return;
 
   groups.forEach((group) => {
-    group.addEventListener("toggle", () => {
-      if (!group.open) return;
+    const summary = group.querySelector("summary");
+    summary?.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      if (group.open) {
+        group.open = false;
+        return;
+      }
 
       groups.forEach((otherGroup) => {
         if (otherGroup !== group) otherGroup.open = false;
+      });
+
+      group.open = true;
+      window.requestAnimationFrame(() => {
+        group.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     });
   });
