@@ -679,7 +679,6 @@ function bindPriceCalculator() {
                 <div>
                   <h3>${item.title}</h3>
                   ${getDescription(item) ? `<p class="price-option-description">${getDescription(item)}</p>` : ""}
-                  <p>${getSizeLabel(item)}${item.note ? ` · ${item.note}` : ""}</p>
                 </div>
                 <strong>${getPriceText(item)}</strong>
                 <button type="button" data-price-add="${getItemId(item)}">${isSelected ? "Kiválasztva" : "Kiválasztom"}</button>
