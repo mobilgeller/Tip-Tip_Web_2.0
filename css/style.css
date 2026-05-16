@@ -1317,6 +1317,79 @@ h4 {
   margin-top: 10px;
 }
 
+.cross-sell-panel {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.cross-sell-head {
+  display: grid;
+  gap: 4px;
+}
+
+.cross-sell-head strong {
+  color: var(--ink-strong);
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.cross-sell-list {
+  display: grid;
+  gap: 10px;
+}
+
+.cross-sell-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px 12px;
+  padding: 12px;
+  border: 1px solid rgba(242, 200, 75, 0.22);
+  border-radius: 14px;
+  background: rgba(242, 200, 75, 0.06);
+}
+
+.cross-sell-item.is-gift {
+  border-color: rgba(80, 190, 130, 0.32);
+  background: rgba(80, 190, 130, 0.08);
+}
+
+.cross-sell-item h3 {
+  margin: 0 0 4px;
+  color: var(--ink-strong);
+  font-size: 0.94rem;
+  font-weight: 900;
+}
+
+.cross-sell-item p,
+.cross-sell-item small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.cross-sell-item strong {
+  color: var(--gold);
+  font-size: 0.9rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.cross-sell-item button {
+  grid-column: 1 / -1;
+  min-height: 36px;
+  border: 1px solid rgba(242, 200, 75, 0.32);
+  border-radius: 12px;
+  color: var(--ink-strong);
+  background: rgba(242, 200, 75, 0.1);
+  font-weight: 900;
+  cursor: pointer;
+}
+
 .offer-image,
 .media-placeholder {
   min-height: 230px;
@@ -1332,6 +1405,31 @@ h4 {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   text-align: center;
+}
+
+.offer-card {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.offer-card h2,
+.offer-card p {
+  margin: 0;
+}
+
+.offer-price {
+  display: grid;
+  gap: 4px;
+  padding-top: 6px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.offer-price strong {
+  color: var(--gold);
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 1;
 }
 
 .integration-card {

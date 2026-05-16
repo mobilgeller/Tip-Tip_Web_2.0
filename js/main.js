@@ -535,6 +535,83 @@ const priceCatalog = [
   { category: "dent", title: "Kavicsfelverődés / külső sérülés kezelése", size: "Egyedi", price: null, note: "Egyedi állapotfelmérés alapján" },
 ];
 
+const crossSellCatalog = [
+  { id: "leather-care-normal", category: "addon", title: "Bőrápolás - normál", size: "Kiegészítő", price: 4500, note: "Külső-belső takarítás mellé" },
+  { id: "leather-care-premium", category: "addon", title: "Bőrápolás - prémium", size: "Kiegészítő", price: 6500, note: "Külső-belső takarítás mellé" },
+  { id: "nano-windshield", category: "addon", title: "Nano szélvédő kezelés", size: "Kiegészítő", price: 10000 },
+  { id: "nano-all-glass", category: "addon", title: "Nano üvegkezelés - összes üvegfelület", size: "Kiegészítő", price: 20000 },
+  { id: "climate-ozone-30", category: "addon", title: "Klímatisztítás, ózonos kezelés", size: "Kiegészítő", price: 10000, note: "30 perc" },
+  { id: "dog-hair-fee", category: "addon", title: "Kutyaszőr felár", size: "Kiegészítő", price: 5000, priceText: "5 000 Ft-tól" },
+  { id: "engine-cleaning-addon", category: "addon", title: "Motortér tisztítás", size: "Kiegészítő", price: 10000 },
+  { id: "fabric-protection", category: "addon", title: "Szövetimpregnálás", size: "Kiegészítő", price: 15000 },
+  { id: "front-seat-cleaning", category: "addon", title: "Üléstisztítás külön - 2 első ülés", size: "Kiegészítő", price: 15000, note: "7 500 Ft / db" },
+  { id: "all-seat-cleaning", category: "addon", title: "Üléstisztítás külön - összes ülés", size: "Kiegészítő", price: 25000 },
+  { id: "basic-ceramic-package", category: "addon", title: "Alap kerámia csomag", size: "Kiegészítő", price: null, priceText: "Kerámia csomag szerint", note: "Árlista alapján pontosítható" },
+  { id: "two-step-interior-gift", category: "gift", title: "Ajándék belső takarítás", size: "Ajándék", price: 0, priceText: "Ajándék", note: "2 lépcsős polírozás mellé" },
+  { id: "bronze-correction-polish", category: "addon", title: "Korrekciós polírozás Bronz csomaghoz", size: "Kiegészítő", price: 40000 },
+  { id: "ceramic-follow-up-addon", category: "addon", title: "Kerámia utókövető csomag", size: "Kiegészítő", price: null, priceText: "Aktuális árlista szerint", note: "Garancia és tartós védelem fenntartásához" },
+  { id: "lamp-ceramic-protection", category: "gift", title: "Kerámia védelem lámpapolírhoz", size: "Csomagtartalom", price: 0, priceText: "Csomagban", note: "Lámpapolír csomagban" },
+  { id: "lamp-film-pair", category: "addon", title: "Lámpafóliázás", size: "Kiegészítő", price: 40000, note: "Pár" },
+  { id: "pollen-filter-change", category: "addon", title: "Pollenszűrő csere", size: "Kiegészítő", price: 0, priceText: "Díjmentes", note: "Hozott pollenszűrő esetén" },
+  { id: "interior-cleaning-by-size", category: "addon", title: "Belső takarítás", size: "Kiegészítő", price: null, priceText: "Járműméret szerint", note: "Árlista alapján" },
+  { id: "upholstery-by-size", category: "addon", title: "Kárpittisztítás", size: "Kiegészítő", price: null, priceText: "Kárpittisztítási árlista szerint" },
+  { id: "ozone-deodorizing-addon", category: "addon", title: "Ózonos szagtalanítás", size: "Kiegészítő", price: 10000, priceText: "10 000-12 000 Ft", note: "Alkalom vagy óra szerint" },
+  { id: "wash-by-size", category: "addon", title: "Külső-belső takarítás", size: "Kiegészítő", price: null, priceText: "Járműméret szerint", note: "Árlista alapján" },
+  { id: "polish-by-size", category: "addon", title: "Polírozás", size: "Kiegészítő", price: null, priceText: "Járműméret szerint", note: "Árlista alapján" },
+  { id: "fleet-combo", category: "addon", title: "Kárpittisztítás + polírozás kombó", size: "Kiegészítő", price: 100000 },
+  { id: "tractor-combo", category: "addon", title: "Traktor kárpittisztítás + polírozás kombó", size: "Kiegészítő", price: 80000 },
+  { id: "fleet-engine-cleaning", category: "addon", title: "Motortér tisztítás nagyobb járműre", size: "Kiegészítő", price: 10000, priceText: "10 000 Ft-tól", note: "Egyeztetéssel" },
+  { id: "fleet-company-offer", category: "addon", title: "Céges ajánlat", size: "Egyedi", price: null, priceText: "Egyedi ajánlat", note: "Több jármű vagy rendszeres igény esetén" },
+];
+
+const isExteriorInteriorCleaning = (item) => {
+  const title = item.title.toLowerCase();
+  return item.category === "wash" && (title.includes("külső-belső") || title.includes("külső + belső"));
+};
+
+const crossSellRules = [
+  {
+    when: isExteriorInteriorCleaning,
+    offers: ["leather-care-normal", "leather-care-premium", "nano-windshield", "nano-all-glass", "climate-ozone-30"],
+  },
+  {
+    when: (item) => item.category === "upholstery" && item.title.toLowerCase().includes("kárpittisztítás"),
+    offers: ["dog-hair-fee", "engine-cleaning-addon", "nano-windshield", "fabric-protection", "front-seat-cleaning", "all-seat-cleaning"],
+  },
+  {
+    when: (item) => item.category === "polish",
+    offers: ["engine-cleaning-addon", "nano-windshield", "basic-ceramic-package"],
+  },
+  {
+    when: (item) => item.category === "polish" && item.title.toLowerCase().includes("kétlépcsős"),
+    offers: ["two-step-interior-gift"],
+  },
+  {
+    when: (item) => item.category === "ceramic",
+    offers: ["ceramic-follow-up-addon", "nano-windshield", "nano-all-glass", "fabric-protection"],
+  },
+  {
+    when: (item) => item.category === "ceramic" && item.title.toLowerCase().includes("bronz"),
+    offers: ["bronze-correction-polish"],
+  },
+  {
+    when: (item) => item.category === "lights",
+    offers: ["lamp-ceramic-protection", "lamp-film-pair", "nano-windshield"],
+  },
+  {
+    when: (item) => item.category === "climate",
+    offers: ["pollen-filter-change", "interior-cleaning-by-size", "upholstery-by-size", "ozone-deodorizing-addon"],
+  },
+  {
+    when: (item) => item.category === "engine",
+    offers: ["wash-by-size", "polish-by-size", "upholstery-by-size"],
+  },
+  {
+    when: (item) => item.category === "fleet",
+    offers: ["fleet-combo", "tractor-combo", "fleet-engine-cleaning", "fleet-company-offer"],
+  },
+];
+
 const priceDescriptions = {
   "Külső mosás": "külső mosás, öblítés, szárazra törlés",
   "Belső takarítás": "porszívózás, műanyagápolás, üvegtisztítás",
@@ -588,6 +665,24 @@ const priceDescriptions = {
   "Belső felületi sérülések javítása": "belső felületi hibák javítása",
   "Horpadásjavítás": "horpadás javítása állapotfelmérés alapján",
   "Kavicsfelverődés / külső sérülés kezelése": "kavicsfelverődés, külső sérülés kezelése",
+  "Bőrápolás - normál": "belső bőrfelületek alap ápolása",
+  "Bőrápolás - prémium": "belső bőrfelületek prémium ápolása",
+  "Nano szélvédő kezelés": "vízlepergető nano bevonat szélvédőre",
+  "Nano üvegkezelés - összes üvegfelület": "vízlepergető nano bevonat minden üvegfelületre",
+  "Klímatisztítás, ózonos kezelés": "ózonos klímakezelés, 30 perces kezelés",
+  "Kutyaszőr felár": "kárpittisztításnál extra szőrmentesítési munka",
+  "Motortér tisztítás": "esztétikai motortér tisztítás",
+  "Szövetimpregnálás": "foltmegelőző szövetvédelem",
+  "Üléstisztítás külön - 2 első ülés": "két első ülés külön tisztítása",
+  "Üléstisztítás külön - összes ülés": "összes ülés külön tisztítása",
+  "Alap kerámia csomag": "kerámia védelem a választott csomag szerint",
+  "Ajándék belső takarítás": "2 lépcsős polírozás mellé kommunikálható ajándék",
+  "Korrekciós polírozás Bronz csomaghoz": "előkészítő korrekciós polírozás Bronz kerámia előtt",
+  "Kerámia utókövető csomag": "utókezelés a garancia és a tartós védelem fenntartásához",
+  "Kerámia védelem lámpapolírhoz": "lámpapolír csomagban kommunikálható védelem",
+  "Lámpafóliázás": "védőfólia párban, a tartósabb lámpavédelemhez",
+  "Pollenszűrő csere": "hozott pollenszűrő esetén díjmentes csere",
+  "Céges ajánlat": "több jármű vagy rendszeres igény esetén külön ajánlat",
 };
 
 function formatPrice(price) {
@@ -614,7 +709,7 @@ function bindPriceCalculator() {
   let activeCategory = priceCategories[0][0];
   let selected = [];
 
-  const getItemId = (item) => `${item.category}|${item.title}|${item.size}|${item.price ?? "custom"}`;
+  const getItemId = (item) => item.id || `${item.category}|${item.title}|${item.size}|${item.price ?? "custom"}`;
 
   const saveSelection = () => {
     localStorage.setItem("tiptopSelectedServices", JSON.stringify(selected));
@@ -623,6 +718,8 @@ function bindPriceCalculator() {
 
   const getSizeLabel = (item) => {
     if (item.sizeLabel) return item.sizeLabel;
+    if (item.category === "addon") return "Ajánlott kiegészítő";
+    if (item.category === "gift") return item.size;
     if (item.category === "carpet") return "m² alapú szolgáltatás";
     if (item.category === "repair" || item.category === "dent") return "Állapotfelmérés alapján";
     if (["climate", "lights", "engine"].includes(item.category)) return "Fix díjas szolgáltatás";
@@ -630,6 +727,49 @@ function bindPriceCalculator() {
   };
 
   const getDescription = (item) => priceDescriptions[item.title] || "";
+
+  const getRecommendations = () => {
+    const recommendedIds = selected.flatMap((item) =>
+      crossSellRules
+        .filter((rule) => rule.when(item))
+        .flatMap((rule) => rule.offers)
+    );
+    const uniqueIds = [...new Set(recommendedIds)];
+
+    return uniqueIds
+      .map((id) => crossSellCatalog.find((item) => item.id === id))
+      .filter(Boolean)
+      .filter((item) => !selected.some((selectedItem) => getItemId(selectedItem) === getItemId(item)));
+  };
+
+  const renderRecommendations = () => {
+    const recommendations = getRecommendations();
+    if (!recommendations.length) return "";
+
+    return `
+      <div class="cross-sell-panel">
+        <div class="cross-sell-head">
+          <span class="section-kicker">Ajánlott mellé</span>
+          <strong>Gyakran kérik hozzá</strong>
+        </div>
+        <div class="cross-sell-list">
+          ${recommendations
+            .map((item) => `
+              <article class="cross-sell-item ${item.category === "gift" ? "is-gift" : ""}">
+                <div>
+                  <h3>${item.title}</h3>
+                  ${getDescription(item) ? `<p>${getDescription(item)}</p>` : ""}
+                  ${item.note ? `<small>${item.note}</small>` : ""}
+                </div>
+                <strong>${getPriceText(item)}</strong>
+                <button type="button" data-recommendation-add="${item.id}">${item.category === "gift" ? "Hozzáadom" : "Hozzáadom"}</button>
+              </article>
+            `)
+            .join("")}
+        </div>
+      </div>
+    `;
+  };
 
   const updateSizeIcon = () => {
     if (!sizeIcon) return;
@@ -641,18 +781,21 @@ function bindPriceCalculator() {
     if (!selected.length) {
       selectedRoot.innerHTML = `<p class="selected-empty">Még nincs kiválasztott szolgáltatás.</p>`;
     } else {
-      selectedRoot.innerHTML = selected
-        .map((item, index) => `
-          <div class="selected-item">
-            <span>
-              <strong>${item.title}</strong>
-              <small>${getSizeLabel(item)}${item.note ? ` · ${item.note}` : ""}</small>
-            </span>
-            <button type="button" data-remove-selected="${index}" aria-label="Kiválasztás törlése"><i class="fa-solid fa-xmark"></i></button>
-            <b>${getPriceText(item)}</b>
-          </div>
-        `)
-        .join("");
+      selectedRoot.innerHTML = `
+        ${selected
+          .map((item, index) => `
+            <div class="selected-item">
+              <span>
+                <strong>${item.title}</strong>
+                <small>${getSizeLabel(item)}${item.note ? ` · ${item.note}` : ""}</small>
+              </span>
+              <button type="button" data-remove-selected="${index}" aria-label="Kiválasztás törlése"><i class="fa-solid fa-xmark"></i></button>
+              <b>${getPriceText(item)}</b>
+            </div>
+          `)
+          .join("")}
+        ${renderRecommendations()}
+      `;
     }
 
     const total = selected.reduce((sum, item) => sum + (item.price || 0), 0);
@@ -713,6 +856,16 @@ function bindPriceCalculator() {
   });
 
   selectedRoot.addEventListener("click", (event) => {
+    const recommendationButton = event.target.closest("[data-recommendation-add]");
+    if (recommendationButton) {
+      const item = crossSellCatalog.find((catalogItem) => catalogItem.id === recommendationButton.getAttribute("data-recommendation-add"));
+      if (!item) return;
+      selected = [...selected, item];
+      renderItems();
+      renderSelected();
+      return;
+    }
+
     const button = event.target.closest("[data-remove-selected]");
     if (!button) return;
     selected = selected.filter((_, index) => index !== Number(button.getAttribute("data-remove-selected")));
