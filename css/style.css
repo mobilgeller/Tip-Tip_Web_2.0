@@ -2249,6 +2249,23 @@ textarea.field {
     white-space: normal;
   }
 
+  .offers-hero .section-head {
+    max-width: 100%;
+  }
+
+  .offers-hero .section-title {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    font-size: clamp(27px, 8.1vw, 36px);
+    line-height: 1.08;
+  }
+
+  .offers-hero .section-copy {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
   .back-to-top,
   .floating-back-button {
     right: 14px;
