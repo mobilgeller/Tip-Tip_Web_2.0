@@ -126,7 +126,7 @@ function renderFooter() {
           </div>
           <div>
             <h4>Hírlevél</h4>
-            <p>Időszakos ajánlatok, szezonális tanácsok és szakmai tartalmak. A végleges rendszer Brevo vagy hasonló hírlevélkezelővel lesz összekötve.</p>
+            <p>Időszakos ajánlatok, szezonális tanácsok és szakmai tartalmak. Ha érdekelnek az aktualitások, jelezd nekünk üzenetben.</p>
             <a class="btn btn-primary" href="${toRoot("kapcsolat/")}">Feliratkozási igény</a>
           </div>
         </div>
@@ -365,12 +365,21 @@ const diagnosisData = {
     href: "szolgaltatasok/teherauto-munkagep-takaritas/",
   },
   serules: {
-    title: "Állapotfelmérés / sérülésjavítási ajánlat",
-    text: "A horpadás, kavicsfelverődés, bőr- vagy szövetkárosodás pontos javíthatósága mindig a sérülés helyétől, méretétől és jellegétől függ. Az első lépés a fotóbeküldés vagy személyes állapotfelmérés.",
-    href: "szolgaltatasok/bor-szovet-javitas/",
+    title: "Horpadásjavítás és kavicsfelverődés javítás",
+    text: "A horpadás és kavicsfelverődés pontos javíthatósága mindig a sérülés helyétől, méretétől és jellegétől függ. Az első lépés a fotóbeküldés vagy személyes állapotfelmérés.",
+    href: "szolgaltatasok/horpadas-kavicsfelverodes/",
     actions: [
       { label: "Horpadás javítás | Részletek", href: "szolgaltatasok/horpadas-kavicsfelverodes/", variant: "light" },
+      { label: "Időpontkérés", href: "foglalas/", variant: "outline" },
+    ],
+  },
+  karpitserules: {
+    title: "Bőr- és szövetjavítás, festés",
+    text: "Kárpitsérülés, szakadás, kopás vagy belső felületi hiba esetén a javíthatóságot fotó vagy személyes állapotfelmérés alapján lehet pontosan megítélni.",
+    href: "szolgaltatasok/bor-szovet-javitas/",
+    actions: [
       { label: "Bőr és szövet javítás, festés | Részletek", href: "szolgaltatasok/bor-szovet-javitas/", variant: "outline" },
+      { label: "Időpontkérés", href: "foglalas/", variant: "light" },
     ],
   },
 };

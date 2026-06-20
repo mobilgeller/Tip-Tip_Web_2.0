@@ -412,6 +412,16 @@ h4 {
   color: var(--gold);
 }
 
+.hero-subtitle {
+  max-width: 720px;
+  margin: -12px 0 22px;
+  color: var(--ink-strong);
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.25;
+  font-weight: 900;
+  font-style: italic;
+}
+
 .lead {
   color: var(--muted);
   font-size: clamp(18px, 2vw, 22px);
@@ -2113,6 +2123,19 @@ textarea.field {
   font-weight: 800;
 }
 
+.map-frame {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.14);
+}
+
+.map-frame iframe {
+  display: block;
+  width: 100%;
+}
+
 .diagnosis-result {
   display: none;
   max-width: 1080px;
@@ -2527,6 +2550,13 @@ textarea.field {
     font-size: clamp(34px, 9.8vw, 46px);
     line-height: 1.08;
     letter-spacing: 0.045em;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    margin: 0 0 16px;
+    font-size: 18px;
+    line-height: 1.28;
     text-align: center;
   }
 
