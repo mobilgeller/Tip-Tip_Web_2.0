@@ -1,0 +1,48 @@
+# AI SEO Rules
+
+## Objective
+
+Content must be understandable by:
+
+- ChatGPT
+- Google AI Overviews
+- Gemini
+- Perplexity
+- future AI systems
+
+## Content Structure
+
+Prefer:
+
+- clear headings
+- concise answers
+- FAQ sections
+- structured explanations
+
+## Writing Style
+
+Clear.
+Factual.
+Specific.
+
+Avoid unnecessary marketing language.
+
+## Expertise
+
+Demonstrate practical expertise.
+
+Prefer real examples.
+
+Prefer problem-solution explanations.
+
+## Authority
+
+Support claims with:
+
+- practical experience
+- real-world examples
+- technical reasoning
+
+## Content Goal
+
+Become a trusted answer source for industrial cleaning and automotive detailing related topics.

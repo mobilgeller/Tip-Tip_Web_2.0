@@ -1,0 +1,38 @@
+# Integration Rules
+
+## Architecture
+
+GitHub Pages hosts the main website.
+
+Wix may be used for:
+
+- booking systems
+- CRM
+- forms
+- blog
+- knowledge base
+- promotions
+- marketing automation
+
+## Important
+
+Do not attempt to convert the GitHub website into a native Wix website.
+
+The GitHub website remains the primary frontend.
+
+## Future Integrations
+
+Possible:
+
+- booking
+- contact forms
+- chat
+- CRM
+- marketing automation
+- email notifications
+
+## Rule
+
+Keep integrations modular.
+
+Avoid modifying core website structure.

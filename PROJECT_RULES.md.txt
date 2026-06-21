@@ -1,0 +1,32 @@
+# Project Rules
+
+## Forbidden
+
+- Full redesign.
+- Framework migration.
+- React migration.
+- Vue migration.
+- Bootstrap migration.
+- File renaming.
+- Folder restructuring.
+- Random animation additions.
+- SEO modifications without request.
+
+## Required
+
+- Maintain premium appearance.
+- Maintain clean structure.
+- Maintain readability.
+- Maintain conversion focus.
+- Maintain mobile usability.
+
+## Development Principle
+
+Make the smallest safe modification possible.
+
+Avoid changing unrelated code.
+
+Never modify more files than necessary.
+
+When unsure:
+Plan first.

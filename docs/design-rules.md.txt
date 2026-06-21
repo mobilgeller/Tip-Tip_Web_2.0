@@ -1,0 +1,54 @@
+# Design Rules
+
+## Visual Direction
+
+Premium.
+Elegant.
+Modern.
+Clean.
+
+The website must never look:
+
+- cheap
+- aggressive
+- spam-like
+- discount focused
+
+## Layout
+
+Whitespace is important.
+
+Do not overcrowd sections.
+
+Avoid unnecessary visual elements.
+
+## Typography
+
+Keep existing typography system.
+
+Do not introduce random fonts.
+
+## Colors
+
+Maintain existing color palette.
+
+Do not introduce additional accent colors.
+
+## CTA Buttons
+
+CTA buttons must remain clearly visible.
+
+Primary CTA:
+
+- Phone call
+- Booking
+
+## Mobile
+
+No horizontal scrolling.
+
+Buttons must remain easily tappable.
+
+Text must remain readable.
+
+Spacing must remain comfortable.

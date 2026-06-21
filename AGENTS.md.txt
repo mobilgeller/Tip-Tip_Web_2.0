@@ -1,0 +1,50 @@
+# Tip-Top 2.0 – Agent Instructions
+
+## Project Overview
+
+Tip-Top prémium autókozmetikai és kerámia bevonat szolgáltatás weboldal.
+
+A cél nem egy általános weboldal készítése, hanem egy magas konverziós arányú, prémium megjelenésű, bizalomépítő rendszer fenntartása és fejlesztése.
+
+## Technology Stack
+
+- HTML
+- CSS
+- Vanilla JavaScript
+- GitHub Pages
+
+Do not introduce frameworks without explicit request.
+
+## General Rules
+
+- Do not redesign the entire website.
+- Do not rename folders or files.
+- Do not remove existing functionality.
+- Preserve existing SEO structure.
+- Preserve existing navigation.
+- Preserve responsive behaviour.
+- Only modify files required for the current task.
+
+## Workflow
+
+Before implementing:
+
+1. Identify affected files.
+2. Explain planned modifications briefly.
+3. Implement only after plan.
+
+After implementation:
+
+1. List modified files.
+2. Summarize changes.
+3. List browser checks required.
+
+## Validation Checklist
+
+Always verify:
+
+- No console errors.
+- No broken internal links.
+- Mobile layout remains functional.
+- CTA buttons remain functional.
+- GitHub Pages compatibility remains intact.
