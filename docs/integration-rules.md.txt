@@ -2,37 +2,64 @@
 
 ## Architecture
 
-GitHub Pages hosts the main website.
+The current website is hosted through GitHub Pages.
 
-Wix may be used for:
+Future integrations must not assume any specific platform unless explicitly decided.
 
-- booking systems
-- CRM
-- forms
-- blog
-- knowledge base
-- promotions
-- marketing automation
+## Possible Future Platforms
+
+The project may later integrate with:
+
+- Wix
+- Custom backend
+- Supabase
+- Firebase
+- Booking platforms
+- CRM systems
+- Marketing automation platforms
+- Custom APIs
+
+The choice of platform is not finalized.
+
+## Core Principle
+
+The website must remain platform-independent whenever possible.
+
+Avoid coupling the core website structure to a single provider.
+
+## Integrations
+
+New integrations should be:
+
+- modular
+- replaceable
+- loosely coupled
+- easy to remove
+
+## Booking Systems
+
+Booking functionality may be implemented through:
+
+- Wix
+- external booking software
+- custom booking system
+- CRM integration
+
+No specific solution is currently mandated.
+
+## Content Management
+
+Blog, knowledge base, promotions and seasonal offers may later be managed through:
+
+- Wix
+- headless CMS
+- custom admin panel
+- other CMS solutions
+
+The implementation choice remains open.
 
 ## Important
 
-Do not attempt to convert the GitHub website into a native Wix website.
+Do not redesign the website around any specific platform unless explicitly requested.
 
-The GitHub website remains the primary frontend.
-
-## Future Integrations
-
-Possible:
-
-- booking
-- contact forms
-- chat
-- CRM
-- marketing automation
-- email notifications
-
-## Rule
-
-Keep integrations modular.
-
-Avoid modifying core website structure.
+Preserve flexibility for future architectural decisions.
